@@ -1,6 +1,7 @@
 import { Colors } from '../../common/colors';
 import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
+
+// import { useLocation } from 'react-router-dom';
 
 // const home = 'Home';
 

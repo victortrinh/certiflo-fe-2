@@ -1,4 +1,5 @@
-import { Home } from '../../pages/home';
+import { Home } from '@/pages/home';
+
 import { Route } from '../route';
 
 const home: Route = {

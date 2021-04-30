@@ -1,4 +1,5 @@
-import { NotFound } from '../../pages/notFound';
+import { NotFound } from '@/pages/notFound';
+
 import { Route } from '../route';
 
 const notFound: Route = {
