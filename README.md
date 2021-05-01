@@ -17,6 +17,7 @@
   - [Installation](#installation)
   - [Run application](#run-application)
 - [Contact](#contact)
+- [For the dev](#for-the-dev)
 
 ## About The Project
 
@@ -64,3 +65,11 @@ Victor Trinh - [Github][github-url]
 [github-url]: https://github.com/victortrinh
 [react-url]: https://reactjs.org/
 [typescript-url]: https://www.typescriptlang.org/
+
+## For the dev
+
+```
+<div dangerouslySetInnerHTML={
+    {__html: t('foo', {interpolation: {escapeValue: false}})}
+} />
+```

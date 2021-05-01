@@ -1,5 +1,7 @@
-@import 'bulma/css/bulma.css';
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
-root {
-  font-family: 'Open Sans';
+.capitalize {
+  text-transform: uppercase;
 }

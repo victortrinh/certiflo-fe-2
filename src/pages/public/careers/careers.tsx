@@ -1,1 +1,5 @@
-export const Careers = () => <>Careers</>;
+export const Careers = () => (
+  <>
+    <h1>Careers</h1>
+  </>
+);

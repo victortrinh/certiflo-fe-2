@@ -1,8 +1,6 @@
-import './App.css';
-
 import { Route, Router, Switch } from 'react-router-dom';
 
-import { NavigationBar } from './components/navigation/navigationBar';
+import { NavigationBar } from './components/navigation/navigation-bar';
 import { createBrowserHistory } from 'history';
 import routes from './routes';
 
