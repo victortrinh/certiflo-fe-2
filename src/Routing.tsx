@@ -8,15 +8,13 @@ import routes from './routes';
 
 const history = createBrowserHistory();
 
-export const Routing = () => {
-  return (
-    <Router history={history}>
-      <NavigationBar />
-      <Switch>
-        {routes.map(({ key, ...props }) => {
-          return <Route key={key} {...props} />;
-        })}
-      </Switch>
-    </Router>
-  );
-};
+export const Routing = () => (
+  <Router history={history}>
+    <NavigationBar />
+    <Switch>
+      {routes.map(({ key, ...props }) => {
+        return <Route key={key} {...props} />;
+      })}
+    </Switch>
+  </Router>
+);

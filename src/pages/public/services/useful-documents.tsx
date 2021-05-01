@@ -1,1 +1,5 @@
-export const UsefulDocuments = () => <>Useful Documents</>;
+export const UsefulDocuments = () => (
+  <>
+    <h1>Useful Documents</h1>
+  </>
+);

@@ -1,0 +1,8 @@
+import { useEffect } from 'react';
+
+export const useResize = (handleResize: () => void) => {
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+};

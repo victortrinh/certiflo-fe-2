@@ -1,1 +1,5 @@
-export const Tankers = () => <>Tankers</>;
+export const Tankers = () => (
+  <>
+    <h1>Tankers</h1>
+  </>
+);

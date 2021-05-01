@@ -1,4 +1,5 @@
 import './App.css';
+import 'lazysizes';
 
 import { Routing } from './Routing';
 

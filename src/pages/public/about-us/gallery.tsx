@@ -1,1 +1,5 @@
-export const Gallery = () => <>Gallery</>;
+export const Gallery = () => (
+  <>
+    <h1>Gallery</h1>
+  </>
+);

@@ -1,1 +1,5 @@
-export const Certification = () => <>Certification</>;
+export const Certification = () => (
+  <>
+    <h1>Certification</h1>
+  </>
+);

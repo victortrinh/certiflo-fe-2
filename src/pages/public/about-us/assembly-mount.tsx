@@ -1,1 +1,5 @@
-export const AssemblyMount = () => <>Assembly / Mount</>;
+export const AssemblyMount = () => (
+  <>
+    <h1>Assembly / Mount</h1>
+  </>
+);

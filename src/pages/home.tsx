@@ -1,1 +1,5 @@
-export const Home = () => <>Home</>;
+export const Home = () => (
+  <>
+    <h1>Home</h1>
+  </>
+);

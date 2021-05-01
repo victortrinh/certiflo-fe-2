@@ -1,1 +1,5 @@
-export const Manufacturers = () => <>Manufacturers</>;
+export const Manufacturers = () => (
+  <>
+    <h1>Manufacturers</h1>
+  </>
+);

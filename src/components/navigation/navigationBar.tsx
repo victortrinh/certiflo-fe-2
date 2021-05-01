@@ -1,67 +1,89 @@
-// import { Colors } from '../../common/colors';
-// import styled from 'styled-components';
+import { NavbarDropdown, NavbarItem } from './components/navbar-dropdown';
+import { assemblyMount, gallery, manufacturers, ourAchievements, personnel } from '@/routes/pages/public/about-us';
+import { certification, serviceRepairs, usefulDocuments } from '@/routes/pages/public/services';
+import { parts, tankers } from '@/routes/pages/public/products';
 
-// import { useLocation } from 'react-router-dom';
-
-// const home = 'Home';
+import { Hamburger } from './components/hamburger';
+import { Link } from 'react-router-dom';
+import { careers } from '@/routes/pages/public/careers';
+import classNames from 'classnames';
+import { joinUs } from '@/routes/pages/public/join-us';
+import { useResize } from '@/hooks/useResize';
+import { useState } from 'react';
 
 export const NavigationBar = () => {
-  // const location = useLocation();
-  // const history = useHistory();
+  const [menuExpanded, setMenuExpanded] = useState(false);
 
-  // const isHome = location.pathname === '/';
+  useResize(() => setMenuExpanded(false));
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-        </a>
-        <a
-          role="button"
-          className="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      {
-        // ADD is-active class when hamburger is clicked
-      }
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <a className="navbar-item">Home</a>
+      <div className="container">
+        <Hamburger onClick={() => setMenuExpanded(!menuExpanded)} />
 
-          <a className="navbar-item">Documentation</a>
-
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">More</a>
-
-            <div className="navbar-dropdown">
-              <a className="navbar-item">About</a>
-              <a className="navbar-item">Jobs</a>
-              <a className="navbar-item">Contact</a>
-              <hr className="navbar-divider" />
-              <a className="navbar-item">Report an issue</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              <a className="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a className="button is-light">Log in</a>
-            </div>
+        <div id="navigation-bar" className={classNames('navbar-menu', { 'is-active': menuExpanded })}>
+          <div className="navbar-end">
+            <NavbarDropdown name="About us" navbarItems={aboutUs} />
+            <NavbarDropdown name="Products" navbarItems={products} />
+            <NavbarDropdown name="Services" navbarItems={services} />
+            <Link to={careers.key} className="navbar-item">
+              Careers
+            </Link>
+            <Link to={joinUs.key} className="navbar-item">
+              Join us
+            </Link>
           </div>
         </div>
       </div>
     </nav>
   );
 };
+
+const aboutUs: NavbarItem[] = [
+  {
+    name: 'Our achievements',
+    key: ourAchievements.key,
+  },
+  {
+    name: 'Personnel',
+    key: personnel.key,
+  },
+  {
+    name: 'Assembly / Mount',
+    key: assemblyMount.key,
+  },
+  {
+    name: 'Manufacturers',
+    key: manufacturers.key,
+  },
+  {
+    name: 'Gallery',
+    key: gallery.key,
+  },
+];
+
+const products: NavbarItem[] = [
+  {
+    name: 'Tankers',
+    key: tankers.key,
+  },
+  {
+    name: 'Parts',
+    key: parts.key,
+  },
+];
+
+const services: NavbarItem[] = [
+  {
+    name: 'Services and repairs',
+    key: serviceRepairs.key,
+  },
+  {
+    name: 'Certification',
+    key: certification.key,
+  },
+  {
+    name: 'Useful documents',
+    key: usefulDocuments.key,
+  },
+];
