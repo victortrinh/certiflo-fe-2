@@ -1,3 +1,5 @@
+import './App.css';
+
 import { Route, Router, Switch } from 'react-router-dom';
 
 import { NavigationBar } from './components/navigation/navigation-bar';

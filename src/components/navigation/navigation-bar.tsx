@@ -3,7 +3,6 @@ import { assemblyMount, gallery, manufacturers, ourAchievements, personnel } fro
 import { certification, serviceRepairs, usefulDocuments } from '@/routes/pages/public/services';
 import { parts, tankers } from '@/routes/pages/public/products';
 
-import { Colors } from '@/common/colors';
 import { FaGlobeAmericas } from 'react-icons/fa';
 import { Hamburger } from './components/hamburger';
 import { Link } from 'react-router-dom';
@@ -85,21 +84,23 @@ export const NavigationBar = () => {
             <NavbarDropdown name={t('about-us')} navbarItems={aboutUs} />
             <NavbarDropdown name={t('products')} navbarItems={products} />
             <NavbarDropdown name={t('services')} navbarItems={services} />
-            <Link to={careers.key} className="navbar-item">
+            <Link to={careers.key} className="navbar-item bottom">
               {t('careers')}
             </Link>
-            <Link to={joinUs.key} className="navbar-item">
+            <Link to={joinUs.key} className="navbar-item bottom">
               {t('join-us')}
             </Link>
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link">
-                <FaGlobeAmericas />
+                <div className="icon">
+                  <FaGlobeAmericas />
+                </div>
               </div>
               <div className="navbar-dropdown">
-                <a href="#" onClick={() => changeLanguage('en')} className="navbar-item sub-item capitalize">
+                <a href="#" onClick={() => changeLanguage('en')} className="navbar-item sub-item uppercase">
                   en
                 </a>
-                <a href="#" onClick={() => changeLanguage('fr')} className="navbar-item sub-item capitalize">
+                <a href="#" onClick={() => changeLanguage('fr')} className="navbar-item sub-item uppercase">
                   fr
                 </a>
               </div>
@@ -112,6 +113,14 @@ export const NavigationBar = () => {
 };
 
 const StyledNav = styled.nav`
+  .bottom {
+    align-items: flex-end;
+  }
+
+  .icon {
+    margin-bottom: -2px;
+  }
+
   .navbar-dropdown {
     padding: 0;
   }
@@ -120,6 +129,19 @@ const StyledNav = styled.nav`
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+
+    img {
+      max-height: none;
+    }
+  }
+
+  .navbar-link {
+    align-items: flex-end;
+
+    :not(.is-arrowless)::after {
+      bottom: 15px;
+      top: auto;
+    }
   }
 
   .sub-item {
@@ -128,7 +150,13 @@ const StyledNav = styled.nav`
     text-transform: none;
 
     &:hover {
-      border-left: 4px solid ${Colors.yellow};
+      border-left: 4px solid ${(props) => props.theme.secondaryColor};
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .navbar-dropdown {
+      border-top: 2px solid ${(props) => props.theme.secondaryColor};
     }
   }
 `;
