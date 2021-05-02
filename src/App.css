@@ -1,42 +1,7 @@
-@font-face {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  src: local('Open Sans'), url(./fonts/OpenSans-Regular.ttf) format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: 300;
-  src: local('Open Sans'), local('OpenSans'), url(./fonts/OpenSans-Light.ttf) format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: 600;
-  src: local('Open Sans'), local('OpenSans'), url(./fonts/OpenSans-SemiBold.ttf) format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: 700;
-  src: local('Open Sans'), local('OpenSans'), url(./fonts/OpenSans-Bold.ttf) format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: 800;
-  src: local('Open Sans'), local('OpenSans'), url(./fonts/OpenSans-ExtraBold.ttf) format('truetype');
-  font-display: swap;
-}
-
-body {
-  font-family: 'Open Sans' !important;
-}
-
 .uppercase {
   text-transform: uppercase !important;
+}
+
+.clickable {
+  cursor: pointer;
 }

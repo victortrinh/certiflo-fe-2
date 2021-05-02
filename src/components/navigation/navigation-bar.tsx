@@ -113,6 +113,8 @@ export const NavigationBar = () => {
 };
 
 const StyledNav = styled.nav`
+  padding: 12px 0;
+
   .bottom {
     align-items: flex-end;
   }

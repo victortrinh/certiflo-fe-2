@@ -9,17 +9,20 @@ export const initializeAndGetClient = (): Client => {
   if (url.toLowerCase().includes('petro-max')) {
     link.href = '/assets/petro-max-favicon.ico';
     document.head.appendChild(link);
+    document.title = 'Petro-max';
     return 'Petro-max';
   }
 
   if (url.toLowerCase().includes('certipropane')) {
     link.href = '/assets/certipropane-favicon.ico';
     document.head.appendChild(link);
+    document.title = 'Certipropane';
     return 'Certipropane';
   }
 
   link.href = '/assets/certiflo-favicon.ico';
   document.head.appendChild(link);
+  document.title = 'Certiflo';
   return 'Certiflo';
 };
 

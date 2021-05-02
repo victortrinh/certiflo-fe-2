@@ -1,6 +1,8 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 $primary: #c00000;
 $link: #c00000;
+$family-sans-serif: 'Open Sans', sans-serif;
 
 @import '../../node_modules/bulma/bulma.sass';
