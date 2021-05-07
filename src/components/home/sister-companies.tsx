@@ -2,7 +2,7 @@ import styled, { useTheme } from 'styled-components';
 
 import { Colors } from '@/common/colors';
 import { Image } from '@components/image';
-import { Skeleton } from '@components/skeleton';
+import { Skeleton } from '@/components/skeleton/skeleton';
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -33,7 +33,7 @@ export const SisterCompanies = ({ className }: Props) => {
       <div className="columns is-tablet is-variable is-3">
         {sisterCompanies.map((sisterCompany) => (
           <div key={sisterCompany.url} className="column clickable" onClick={() => goToLink(sisterCompany.url)}>
-            <div className="sister-company">
+            <div className="sister-company scale-on-hover">
               <Suspense fallback={<Skeleton height="85px" width="295px" />}>
                 <Image
                   alt={sisterCompany.url}
@@ -61,7 +61,6 @@ const StyledSisterCompanies = styled.div`
 
   .sister-company {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    transition: 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,10 +70,6 @@ const StyledSisterCompanies = styled.div`
     img {
       height: 100%;
       width: auto;
-    }
-
-    &:hover {
-      transform: scale(1.05);
     }
   }
 `;

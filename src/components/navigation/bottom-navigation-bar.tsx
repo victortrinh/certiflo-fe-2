@@ -3,7 +3,7 @@ import styled, { useTheme } from 'styled-components';
 import { Colors } from '@/common/colors';
 import { Image } from '@components/image';
 import { Link } from 'react-router-dom';
-import { Skeleton } from '@components/skeleton';
+import { Skeleton } from '@/components/skeleton/skeleton';
 import { Suspense } from 'react';
 import { careers } from '@/routes/pages/public/careers';
 import { joinUs } from '@/routes/pages/public/join-us';

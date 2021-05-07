@@ -3,7 +3,7 @@ import styled, { useTheme } from 'styled-components';
 import { Colors } from '@/common/colors';
 import { Image } from '@components/image';
 import { Link } from 'react-router-dom';
-import { Skeleton } from '@components/skeleton';
+import { Skeleton } from '@/components/skeleton/skeleton';
 import { Suspense } from 'react';
 import { joinUs } from '@/routes/pages/public/join-us';
 import { useTranslation } from 'react-i18next';
@@ -32,7 +32,7 @@ type Props = {
 
 const Column = ({ alt, source, title, value }: Props) => (
   <div className="column">
-    <Link to={joinUs.key} className="sub-column">
+    <Link to={joinUs.key} className="scale-on-hover">
       <Suspense fallback={<Skeleton height="180px" width="180px" />}>
         <Image alt={alt} className="sister-image" height="180" source={source} width="180" />
       </Suspense>
@@ -54,14 +54,6 @@ const StyledMissionCommitmentValues = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .sub-column {
-      transition: 0.5s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
   }
 
   .sub-title {

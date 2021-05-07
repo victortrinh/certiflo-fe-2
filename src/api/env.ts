@@ -1,3 +1,3 @@
 export const env = {
-  baseUrl: 'https://localhost:5001/',
+  baseUrl: 'https://certiflo-be.herokuapp.com/',
 };

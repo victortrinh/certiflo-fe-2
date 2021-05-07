@@ -1,9 +1,6 @@
 import { Colors } from '@/common/colors';
-import { Image } from '@/components/image';
 import { MissionCommitmentValues } from '@components/home/mission-commitment-values';
 import { SisterCompanies } from '@components/home/sister-companies';
-import { Skeleton } from '@components/skeleton';
-import { Suspense } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
@@ -14,15 +11,15 @@ export const Home = () => {
     <StyledHome>
       <h1>{t('main-text')}</h1>
       <h2>{t('secondary-text')}</h2>
-      <Suspense fallback={<Skeleton height="620px" width="1016px" />}>
-        <Image
-          alt="Truck"
-          className="truck"
-          height="620px"
-          source={`${process.env.PUBLIC_URL}/images/truck.png`}
-          width="1016px"
-        />
-      </Suspense>
+
+      <img
+        alt="Truck"
+        className="truck"
+        height="620px"
+        src={`${process.env.PUBLIC_URL}/images/truck.png`}
+        width="1016px"
+      />
+
       <div className="background" />
       <div className="container">
         <SisterCompanies className="sister" />

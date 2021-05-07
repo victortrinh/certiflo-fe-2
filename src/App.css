@@ -5,3 +5,15 @@
 .clickable {
   cursor: pointer;
 }
+
+table {
+  font-size: 14px;
+}
+
+.scale-on-hover {
+  transition: 0.5s ease;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
