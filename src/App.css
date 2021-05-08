@@ -17,3 +17,15 @@ table {
 .scale-on-hover:hover {
   transform: scale(1.05);
 }
+
+.card-columns {
+  column-gap: 12px;
+  column-count: 3;
+}
+
+.card-columns div {
+  background-color: transparent;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 100%;
+}

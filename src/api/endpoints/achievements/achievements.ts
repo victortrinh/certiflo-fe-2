@@ -1,7 +1,4 @@
-import { getAxiosClient } from '../../axiosClientFactory';
-import { Data, ErrorData } from '../../response';
-
-const client = getAxiosClient();
+import { GenericApi, ModelData } from '../generic-api';
 
 export type Achievement = {
   capacity: string;
@@ -19,32 +16,10 @@ export type Achievement = {
   specification: string;
 };
 
-export type AchievementData = Data & {
+export interface AchievementData extends ModelData {
   response: {
     realizations: Achievement[];
   };
-};
-
-const baseURL = '/api/realization';
-
-export class AchievementApi {
-  async get() {
-    return this.perform('get', `${baseURL}/all`);
-  }
-
-  async perform(method: any, resource: any, data: Achievement | null = null) {
-    return client({
-      method,
-      url: resource,
-      data,
-    }).then(
-      (resp: any): AchievementData => ({ isError: false, response: resp.data }),
-      (error: any): ErrorData => ({
-        isError: true,
-        response: error.response?.data?.message ?? 'Error with back-end',
-      }),
-    );
-  }
 }
 
-export const achievementApi = new AchievementApi();
+export const achievementApi = new GenericApi<AchievementData, Achievement>('/api/realization');
