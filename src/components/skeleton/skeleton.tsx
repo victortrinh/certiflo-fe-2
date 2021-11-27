@@ -1,16 +1,20 @@
 import styled, { css } from 'styled-components';
 
 type Props = {
+  borderRadius?: string;
   height: string;
   width: string;
 };
 
-export const Skeleton = ({ height, width }: Props) => <StyledSkeleton height={height} width={width} />;
+export const Skeleton = ({ borderRadius, height, width }: Props) => (
+  <StyledSkeleton height={height} width={width} borderRadius={borderRadius} />
+);
 
 const StyledSkeleton = styled.div<Props>`
-  ${(props) => css`
-    height: ${props.height};
-    width: ${props.width};
+  ${({ borderRadius, height, width }) => css`
+    height: ${height};
+    width: ${width};
+    border-radius: ${borderRadius};
   `}
 
   background-color: #e2e2e2;

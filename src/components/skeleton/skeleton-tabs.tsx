@@ -5,17 +5,17 @@ export const SkeletonTabs = () => (
     <ul>
       <li>
         <a>
-          <Skeleton height="1rem" width="80px" />
+          <Skeleton height="1rem" width="80px" borderRadius="24px" />
         </a>
       </li>
       <li>
         <a>
-          <Skeleton height="1rem" width="80px" />
+          <Skeleton height="1rem" width="80px" borderRadius="24px" />
         </a>
       </li>
       <li>
         <a>
-          <Skeleton height="1rem" width="80px" />
+          <Skeleton height="1rem" width="80px" borderRadius="24px" />
         </a>
       </li>
     </ul>

@@ -10,10 +10,10 @@ export const SkeletonTiles = () => {
         </div>
         <div className="card-content">
           <StyledCard className="content">
-            <Skeleton width="100%" height="14px" />
-            <Skeleton width="100%" height="14px" />
-            <Skeleton width="100%" height="14px" />
-            <Skeleton width="100%" height="14px" />
+            <Skeleton width="100%" height="14px" borderRadius="24px" />
+            <Skeleton width="100%" height="14px" borderRadius="24px" />
+            <Skeleton width="100%" height="14px" borderRadius="24px" />
+            <Skeleton width="100%" height="14px" borderRadius="24px" />
           </StyledCard>
         </div>
       </div>

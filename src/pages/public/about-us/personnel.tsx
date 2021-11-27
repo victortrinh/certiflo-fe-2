@@ -5,7 +5,6 @@ import { Error } from '@/components/error';
 import { Image } from '@components/image';
 import { PageContainer } from '@/components/page-container';
 import { Skeleton } from '@/components/skeleton/skeleton';
-import { SkeletonTiles } from '@/components/skeleton/skeleton-tiles';
 import { getClient } from '@/client/client-provider';
 import { useGet } from '@/api/endpoints/hooks/use-get';
 import { useTranslation } from 'react-i18next';
@@ -25,7 +24,7 @@ export const Personnel = () => {
 
   const employeeCards = () => {
     if (!employees) {
-      return <SkeletonTiles />;
+      return null;
     }
 
     return (
